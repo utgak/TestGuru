@@ -5,15 +5,44 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-user = User.create!(login: 'user1', password: '12345', access_rights: 'admin')
-category = Category.create!(title: 'history')
-test = Test.create!(title: 'title', level: 1, user: user, category: category)
-pt = PassedTest.create!(user: user, test: test, count: 1)
-question = Question.create!(title: 'title', test: test)
-answer = Answer.create!(title: 'title', correct: false, question: question)
-user2 = User.create!(login: 'user2', password: '12345', access_rights: 'admin')
-category2 = Category.create!(title: 'history')
-test2 = Test.create!(title: 'title2', level: 1, user: user2, category: category2)
-pt2 = PassedTest.create!(user: user2, test: test2, count: 1)
-question2 = Question.create!(title: 'title2', test: test2)
-answer2 = Answer.create!(title: 'title2', correct: false, question: question2)
+User.create!([{ login: 'user1', password: '12345', access_rights: 'admin' },
+              { login: 'user2', password: '12345', access_rights: 'admin' },
+              { login: 'user3', password: '12345', access_rights: 'admin' },
+              { login: 'user4', password: '12345', access_rights: 'admin' }])
+
+Category.create!([{ title: 'title1' },
+                  { title: 'title2' },
+                  { title: 'title3' },
+                  { title: 'title4' }])
+
+Test.create!([{ title: 'title1', level: 1, user_id: 1, category_id: 1 },
+              { title: 'title2', level: 2, user_id: 2, category_id: 2 },
+              { title: 'title3', level: 3, user_id: 3, category_id: 3 },
+              { title: 'title4', level: 4, user_id: 4, category_id: 4 }])
+
+PassedTest.create!([{ user_id: 1, test_id: 1, count: 0 },
+                    { user_id: 2, test_id: 2, count: 0 },
+                    { user_id: 3, test_id: 3, count: 0 },
+                    { user_id: 4, test_id: 4, count: 0 }])
+
+Question.create!([{ title: 'title1', test_id: 1 },
+                  { title: 'title2', test_id: 1 },
+                  { title: 'title3', test_id: 1 },
+                  { title: 'title4', test_id: 1 }])
+
+Answer.create!([{ title: 'title1', correct: true,  question_id: 1 },
+                { title: 'title2', correct: false, question_id: 1 },
+                { title: 'title3', correct: false, question_id: 1 },
+                { title: 'title4', correct: false, question_id: 1 },
+                { title: 'title1', correct: true,  question_id: 2 },
+                { title: 'title2', correct: false, question_id: 2 },
+                { title: 'title3', correct: false, question_id: 2 },
+                { title: 'title4', correct: false, question_id: 2 },
+                { title: 'title1', correct: true,  question_id: 3 },
+                { title: 'title2', correct: false, question_id: 3 },
+                { title: 'title3', correct: false, question_id: 3 },
+                { title: 'title4', correct: false, question_id: 3 },
+                { title: 'title1', correct: true,  question_id: 4 },
+                { title: 'title2', correct: false, question_id: 4 },
+                { title: 'title3', correct: false, question_id: 4 },
+                { title: 'title4', correct: false, question_id: 4 }])
