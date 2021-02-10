@@ -20,7 +20,7 @@ class Test < ApplicationRecord
   end
 
   def uniqueness_of_the_test
-    if Test.where(title: title).size > 1 and Test.where(level: level).size > 1
+    if Test.where(title: title, level: level).size > 1
       errors.add(:uniqueness_error, 'a tests with the same name and level already exist')
     end
   end
