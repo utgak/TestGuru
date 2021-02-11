@@ -7,7 +7,7 @@ class Answer < ApplicationRecord
   scope :all_correct, -> { where(correct: true )}
 
   def number_of_answers
-    unless question.answers.size.between?(1,4)
+    if question.answers.size > 4
       errors.add(:count_of_answers)
     end
   end
