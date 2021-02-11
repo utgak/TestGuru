@@ -16,7 +16,7 @@ categories = Category.create!([{ title: 'title1' },
                                { title: 'title4' }])
 
 tests = Test.create!([{ title: 'title1', level: 1, author: users[0], category: categories[0] },
-                      { title: 'title2', level: 2, author: users[1], category: categories[1] },
+                      { title: 'title1', level: 2, author: users[1], category: categories[1] },
                       { title: 'title3', level: 3, author: users[2], category: categories[2] },
                       { title: 'title4', level: 4, author: users[3], category: categories[3] }])
 
