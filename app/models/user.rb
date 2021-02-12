@@ -6,6 +6,6 @@ class User < ApplicationRecord
   validates :login, presence: true
 
   def passed_tests_by_level(level)
-    User.joins(:tests).where(tests: {level: level}, passed_tests: {user: id})
+    User.joins(:tests).where(tests: { level: level }, passed_tests: { user: id })
   end
 end

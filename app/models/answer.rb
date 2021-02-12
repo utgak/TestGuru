@@ -2,13 +2,11 @@ class Answer < ApplicationRecord
   belongs_to :question
 
   validates :title, presence: true
-  validate :number_of_answers, on: create
+  validate :validate_number_of_answers, on: :create
 
-  scope :all_correct, -> { where(correct: true )}
+  scope :all_correct, -> { where(correct: true) }
 
-  def number_of_answers
-    if question.answers.size > 4
-      errors.add(:count_of_answers)
-    end
+  def validate_number_of_answers
+    errors.add(:base) if question.answers.size > 3
   end
 end
