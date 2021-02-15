@@ -26,6 +26,9 @@ PassedTest.create!([{ user: users[0], test: tests[0], count: 0 },
                     { user: users[3], test: tests[3], count: 0 }])
 
 questions = Question.create!([{ title: 'title1', test: tests[0] },
+                              { title: 'title2', test: tests[0] },
+                              { title: 'title3', test: tests[0] },
+                              { title: 'title4', test: tests[0] },
                               { title: 'title2', test: tests[1] },
                               { title: 'title3', test: tests[2] },
                               { title: 'title4', test: tests[3] }])
