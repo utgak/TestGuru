@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
 
-  before_action :find_test
+  before_action :find_test, only: %i[index create]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
@@ -9,18 +9,22 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    render plain: @test.questions.find(params['id']).inspect
+    render plain: Question.find(params['id']).inspect
   end
 
   def new; end
 
   def create
-    question = Question.create!(question_params)
-    render plain: question.inspect
+    @question = @test.questions.build(question_params)
+    if @question.save
+      render plain: @question.inspect
+    else
+      render plain: 'Invalid data'
+    end
   end
 
   def destroy
-    @test.questions.find(params['id']).destroy
+    Question.find(params['id']).destroy
     render plain: 'deleted'
   end
 
@@ -35,6 +39,6 @@ class QuestionsController < ApplicationController
   end
 
   def rescue_with_question_not_found
-    render plain: 'Question was not found'
+    render plain: 'Record was not found'
   end
 end
