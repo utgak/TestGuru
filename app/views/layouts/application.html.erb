@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html>
+  <style>
+    footer {
+        text-align: center;
+        background-color: black;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        color: white;
+    }
+  </style>
   <head>
     <title>TestGuru</title>
     <%= csrf_meta_tags %>
@@ -12,4 +23,14 @@
   <body>
     <%= yield %>
   </body>
+
+  <footer>
+    <p>Автор: <%= render html: github_url('utgak', 'TestGuru') %>
+    </p>
+
+    <p>
+      Учебный проект в школе <%= link_to 'Thinknetica', 'http://thinknetica.com' %>
+    </p>
+    <p> Год: <%= current_year %></p>
+  </footer>
 </html>
