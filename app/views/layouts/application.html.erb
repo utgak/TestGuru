@@ -23,14 +23,5 @@
   <body>
     <%= yield %>
   </body>
-
-  <footer>
-    <p>Автор: <%= render html: github_url('utgak', 'TestGuru') %>
-    </p>
-
-    <p>
-      Учебный проект в школе <%= link_to 'Thinknetica', 'http://thinknetica.com' %>
-    </p>
-    <p> Год: <%= current_year %></p>
-  </footer>
+  <%= render 'layouts/footer' %>
 </html>

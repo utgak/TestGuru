@@ -1,17 +1,10 @@
-<table>
-    <tr>
-        <th>Title</th>
-        <th coolspan="3">Actions</th>
-    </tr>
 
-    <% @test.questions.each do |question| %>
+  </tr>
     <tr>
-        <td><%= question.title %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Show', question_path(question) %></td>
-        <td><%= link_to 'Delete', question_path(question),
-            method: :delete,
-            data: { confirm: 'Are you sure?'}%></td>
+      <td><%= questions.title %></td>
+      <td><%= link_to 'Edit', edit_question_path(questions) %></td>
+      <td><%= link_to 'Show', question_path(questions) %></td>
+      <td><%= link_to 'Delete', question_path(questions),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?'}%></td>
     </tr>
-    <% end %>
-</table>
