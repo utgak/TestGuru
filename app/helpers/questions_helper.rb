@@ -1,5 +1,5 @@
 module QuestionsHelper
   def question_header(question)
-    question.test.title
+    "#{question.new_record? ? 'Create new' : 'Edit'} #{question.test.title} question"
   end
 end
