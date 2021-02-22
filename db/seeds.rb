@@ -18,7 +18,6 @@ categories = Category.create!([{ title: 'title1' },
 tests = Test.create!([{ title: 'title1', level: 1, author: users[0], category: categories[0] },
                       { title: 'title1', level: 2, author: users[1], category: categories[1] }])
 
-
 questions = Question.create!([{ title: 'title1', test: tests[0] },
                               { title: 'title2', test: tests[0] },
                               { title: 'title3', test: tests[0] },

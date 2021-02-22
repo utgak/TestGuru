@@ -6,7 +6,7 @@ class TestPassage < ApplicationRecord
   TEST_PASS_PERCENTAGE = 85
 
   before_validation :before_validation_set_first_question, on: :create
-  before_validation :next_question, on: :update
+  before_validation :before_validation_next_question, on: :update
 
   def completed?
     current_question.nil?
@@ -32,7 +32,7 @@ class TestPassage < ApplicationRecord
     current_question.answers.all_correct
   end
 
-  def next_question
+  def before_validation_next_question
     self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
   end
 end
