@@ -2,4 +2,5 @@
   <td><%= tests.title %></td>
   <td><%= tests.questions.size %></td>
   <td><%= link_to 'Show', test_path(tests) %></td>
+  <td> <%= button_to 'Start', start_test_path(tests) %></td>
 </tr>
