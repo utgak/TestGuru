@@ -1,13 +1,16 @@
 module TestPassagesHelper
   def result(test_passage)
-    percent = test_passage.correct_questions.to_f / test_passage.test.questions.count * 100.0
-
-    if percent >= TestPassage::TEST_PASS_PERCENTAGE
-      render html: "<p> Test passed successfully, <br>
-                   percentage of correct answers <strong style='color :green; '> #{percent} </strong>%</p>".html_safe
+    if test_passage.success?
+      content_tag :p, "Test passed successfully, <br>
+                   percentage of correct answers <strong style='color :green; '> #{test_passage.percent} </strong>%".html_safe
     else
-      render html: "<p> The test was not passed, <br>
-                   percentage of correct answers <strong style='color :red; '> #{percent} </strong>%</p>".html_safe
+      content_tag :p, "The test was not passed, <br>
+                   percentage of correct answers <strong style='color :red; '> #{test_passage.percent} </strong>%".html_safe
     end
+  end
+
+  def test_progress(test_passage)
+    content_tag :p, "Question #{test_passage.current_question.id - test_passage.test.questions.first.id + 1}
+     / #{test_passage.test.questions.size}".html_safe
   end
 end

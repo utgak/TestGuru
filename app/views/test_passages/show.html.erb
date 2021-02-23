@@ -17,10 +17,7 @@
     <%= form.submit 'Next' %>
   </p>
 
-  <p>
-    <%= "Question #{@test_passage.current_question.id - @test_passage.test.questions.first.id + 1}
-     / #{@test_passage.test.questions.size}" %>
-  </p>
+
 
   <p>
     <%= link_to 'Back', tests_path %>
