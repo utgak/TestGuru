@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 2021_02_22_012507) do
   end
 
   create_table "test_passages", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "test_id"
+    t.integer "user_id", null: false
+    t.integer "test_id", null: false
     t.integer "current_question_id"
     t.integer "correct_questions", default: 0
     t.datetime "created_at", null: false

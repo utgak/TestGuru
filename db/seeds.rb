@@ -55,7 +55,4 @@ Answer.create!([{ title: 'title1', correct: true,  question: questions[0] },
                 { title: 'title2', correct: true,  question: questions[8] },
                 { title: 'title3', correct: false, question: questions[8] },
                 { title: 'title4', correct: false, question: questions[9] },
-                { title: 'title1', correct: true,  question: questions[9] },
-                { title: 'title2', correct: false, question: questions[10] },
-                { title: 'title3', correct: true,  question: questions[10] },
-                { title: 'title4', correct: false, question: questions[10] }])
+                { title: 'title1', correct: true,  question: questions[9] }])
