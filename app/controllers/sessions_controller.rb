@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   skip_before_action :authenticate_user!
-  skip_before_action :save_path
 
   def new
     redirect_to root_path if logged_in?
@@ -11,7 +10,11 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to cookies[:path]
+      if cookies[:before_login_path]
+        redirect_to cookies[:before_login_path]
+      else
+        redirect_to root_path
+      end
     else
       flash.now[:alert] = 'Are you Guru? Verify your Email and Password please'
       render :new
@@ -19,7 +22,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+    reset_session
     redirect_to login_path
   end
 end
