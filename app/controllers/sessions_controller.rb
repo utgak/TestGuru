@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       if cookies[:before_login_path]
         redirect_to cookies[:before_login_path]
+        cookies.delete(:before_login_path)
       else
         redirect_to root_path
       end
