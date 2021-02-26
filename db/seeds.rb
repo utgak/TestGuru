@@ -5,10 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-users = User.create!([{ login: 'user1', password: '12345', access_rights: 'user' },
-                      { login: 'user2', password: '12345', access_rights: 'user' },
-                      { login: 'user3', password: '12345', access_rights: 'user' },
-                      { login: 'user4', password: '12345', access_rights: 'user' }])
+users = User.create!([{ email: 'user@example.com', password: '12345' },
+                      { email: 'user1@example.com', password: '12345' }])
 
 categories = Category.create!([{ title: 'title1' },
                                { title: 'title2' },
@@ -16,7 +14,7 @@ categories = Category.create!([{ title: 'title1' },
                                { title: 'title4' }])
 
 tests = Test.create!([{ title: 'title1', level: 1, author: users[0], category: categories[0] },
-                      { title: 'title1', level: 2, author: users[1], category: categories[1] }])
+                      { title: 'title1', level: 2, author: users[0], category: categories[1] }])
 
 questions = Question.create!([{ title: 'title1', test: tests[0] },
                               { title: 'title2', test: tests[0] },

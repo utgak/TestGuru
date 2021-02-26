@@ -1,16 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <style>
-    footer {
-        text-align: center;
-        background-color: black;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        color: white;
-    }
-  </style>
   <head>
     <title>TestGuru</title>
     <%= csrf_meta_tags %>
@@ -21,6 +10,7 @@
   </head>
 
   <body>
+  <%= render 'layouts/navigation' %>
     <%= yield %>
   </body>
   <%= render 'layouts/footer' %>
