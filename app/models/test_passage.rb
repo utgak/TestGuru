@@ -1,7 +1,7 @@
 class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
-  belongs_to :current_question, class_name: 'Question', foreign_key: 'question_id', optional: true
+  belongs_to :current_question, class_name: 'Question', optional: true
 
   MIN_POINTS = 85
 
