@@ -1,0 +1,5 @@
+<tr>
+  <td><%= gists.user.email %></td>
+  <td><%= link_to "#{gists.gist_url.delete_prefix('https://gist.github.com/')}", gists.gist_url, target: :_blank %></td>
+  <td><%= link_to "#{gists.question.title[0..25]}", admin_question_path(gists.question)  %></td>
+</tr>

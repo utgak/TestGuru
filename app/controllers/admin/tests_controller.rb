@@ -1,7 +1,5 @@
 class Admin::TestsController < Admin::BaseController
 
-  layout 'admin'
-
   before_action :set_test, only: %i[show edit update destroy start]
 
   def index
