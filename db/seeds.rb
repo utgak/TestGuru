@@ -48,5 +48,5 @@ Answer.create!([{ title: 'title1', correct: true,  question: questions[0] },
                 { title: 'title4', correct: false, question: questions[9] },
                 { title: 'title1', correct: true,  question: questions[9] }])
 
-Gist.create!([{question: questions[0], user: users[1], gist_url: "https://gist.github.com/utgak/f2cd60845bd5e15fccb19c435f2bf3b6"},
-              {question: questions[0], user: users[1], gist_url: "https://gist.github.com/utgak/cba8d38121414e3d42b02aabfab61e23"}])
+Gist.create!([{question: questions[0], user: users[1], gist_url: "https://gist.github.com/f2cd60845bd5e15fccb19c435f2bf3b6"},
+              {question: questions[0], user: users[1], gist_url: "https://gist.github.com/cba8d38121414e3d42b02aabfab61e23"}])
