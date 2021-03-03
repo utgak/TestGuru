@@ -30,4 +30,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  gist_description: "A question about %{test} from TestGuru"
+  gist:
+    description: "A question about %{test} from TestGuru"
+    index:
+      user: "User"
+      gist: "Gist"
+      question: "Question"
+      gists: "Gists"
+  success: "Success"
+  failure: "Failure"
+

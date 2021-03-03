@@ -4,7 +4,7 @@
   <div class="nav-admin user">
     Welcome, <%= current_user.first_name %> Guru |
     <%= link_to 'TestGuru', admin_tests_path %> |
-    <%= link_to 'Gists', admin_gist_index_path %>
+    <%= link_to I18n.t("gist.index.gists"), admin_gist_index_path %>
     <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
   </div>
 </div>

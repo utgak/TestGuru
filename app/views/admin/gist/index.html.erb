@@ -1,6 +1,6 @@
 <table>
-  <th>User</th>
-  <th>Gist</th>
-  <th>Question</th>
+  <th><%= I18n.t("gist.index.user") %></th>
+  <th><%= I18n.t("gist.index.gist") %></th>
+  <th><%= I18n.t("gist.index.question") %></th>
   <%= render partial:'admin/gist/gists', collection: @gists %>
 </table>

@@ -7,14 +7,13 @@ class GistQuestionService
 
   def call
     @client.create_gist(gist_params)
-
   end
 
   private
 
   def gist_params
     {
-      description: I18n.t(".gist_description", test: @test.title),
+      description: I18n.t(".gist.description", test: @test.title),
       files: {
         'test-guru-question.txt': {
           content: gist_content
@@ -24,8 +23,6 @@ class GistQuestionService
   end
 
   def gist_content
-    content = [@question.title]
-    content += @question.answers.pluck(:title)
-    content.join("\n")
+    [@question.title, *@question.answers.pluck(:title)].join("\n")
   end
 end
