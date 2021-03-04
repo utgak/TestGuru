@@ -1,8 +1,8 @@
-<h1>Editing Answer</h1>
+<h1><%= I18n.t('editing_answer') %></h1>
 
 <p> <%= @answer.question.title %></p>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', admin_answer_path(@answer) %> |
-<%= link_to 'Back', admin_question_path(@answer.question) %>
+<%= link_to I18n.t('show'), admin_answer_path(@answer) %> |
+<%= link_to I18n.t('back'), admin_question_path(@answer.question) %>

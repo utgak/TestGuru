@@ -5,13 +5,13 @@ Rails.application.routes.draw do
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout}, controllers: { sessions: 'users/sessions' }
 
   post '/tests/:id/start', to: "tests#start"
+  post '/test_passages/:test_passages_id/gist', to: "gist#create"
 
   resources :tests, only: :index
 
   resources :test_passages, only: %i[show update] do
     member do
       get :result
-      post :gist, to: "gist#gist"
     end
   end
 

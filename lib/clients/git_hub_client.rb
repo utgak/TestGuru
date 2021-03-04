@@ -1,7 +1,6 @@
 class GitHubClient
 
   def initialize
-    super
     @client = Octokit::Client.new(access_token: Rails.application.credentials.fetch(:gist_token))
   end
 

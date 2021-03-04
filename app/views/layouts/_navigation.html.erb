@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <p class="nav user">
-    Welcome, <b><%= current_user.first_name %></b> Guru |
+    <%= I18n.t('welcome') %>, <b><%= current_user.first_name %></b> Guru |
     <%= link_to 'TestGuru', root_path %> |
-    <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+    <%= link_to I18n.t('logout'), destroy_user_session_path, method: :delete %>
   </p>
 <% end %>
