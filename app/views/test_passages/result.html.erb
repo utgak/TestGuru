@@ -4,7 +4,7 @@
   <%= t('result') %>:
 </h2>
 <p>
-  <%= result(@test_passage) %>
+  <%= result(@test_passage).html_safe %>
 </p>
 
 <p><%= link_to t('back'), tests_path %></p>

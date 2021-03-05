@@ -51,8 +51,8 @@ en:
   not_authorized: "You are not authorized to view this page"
   record_not_found: "Record was not found"
   question: "Question"
-  t_passed: "Test passed successfully"
-  t_npassed: "The test was not passed"
+  t_passed: <p> Test passed successfully, <br>percentage of correct answers <strong style='color :green; '> %{percent} </strong>%</p>
+  t_not_passed: <p> The test was not passed, <br>percentage of correct answers <strong style='color :red; '> %{percent} </strong>%</p>
   c_persent: "percentage of correct answers"
   create_new: "Create new"
   new_answer: "New answer"
@@ -69,3 +69,7 @@ en:
   level: "Level"
   number_of_questions: "Number of questions"
   action: "Action"
+  gist_flash: <a href="%{url}" target="_blank" rel="nofollow"> Gist %{question_title} created </a>
+  new_question: "New question"
+  test: "Test"
+  Tricky Tests: "Tricky Tests"

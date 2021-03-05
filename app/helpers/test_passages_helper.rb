@@ -1,11 +1,9 @@
 module TestPassagesHelper
   def result(test_passage)
     if test_passage.success?
-      content_tag :p, "#{t('t_passed')}, <br>
-                   #{t('c_persent')} <strong style='color :green; '> #{test_passage.percent} </strong>%".html_safe
+      t("t_passed", percent: test_passage.percent)
     else
-      content_tag :p, "#{t('t_npassed')}, <br>
-                   #{t('c_persent')} <strong style='color :red; '> #{test_passage.percent} </strong>%".html_safe
+      t("t_not_passed", percent: test_passage.percent)
     end
   end
 

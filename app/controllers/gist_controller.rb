@@ -4,10 +4,10 @@ class GistController < ApplicationController
     @result = GistQuestionService.new(@test_passage.current_question).call
 
     if @result.success?
-      flash[:notice] =  "#{ t("success") }, #{ @result.url }"
+      flash[:notice] =  t("gist_flash", url: @result.url, question_title: @test_passage.current_question.title)
       Gist.create!(gist_url: @result.url, user: current_user, question: @test_passage.current_question)
     else
-      flash[:alert] = "#{ t("failure") }"
+      flash[:alert] = t("failure")
     end
 
     redirect_to @test_passage

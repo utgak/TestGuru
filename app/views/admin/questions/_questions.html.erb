@@ -1,8 +1,8 @@
 <tr>
   <td><%= questions.title %></td>
   <td><%= link_to t('edit'), edit_admin_question_path(questions) %></td>
-  <td><%= link_to I18n.t('show'), admin_question_path(questions) %></td>
-  <td><%= link_to I18n.t('delete'), admin_question_path(questions),
+  <td><%= link_to t('show'), admin_question_path(questions) %></td>
+  <td><%= link_to t('delete'), admin_question_path(questions),
                   method: :delete,
-                  data: { confirm: I18n.t('are_you_sure?') }%></td>
+                  data: { confirm: t('are_you_sure?') }%></td>
 </tr>
