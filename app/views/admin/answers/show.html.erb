@@ -1,4 +1,4 @@
-<h1><%= I18n.t('question') %>:</h1>
+<h1><%= t('question') %>:</h1>
 
 <p>
   <%= @answer.question.title %>
@@ -14,5 +14,5 @@
   <%= @answer.correct %>
 </p>
 
-<%= link_to I18n.t('edit'), edit_admin_answer_path(@answer) %> |
-<%= link_to I18n.t('back'), admin_question_path(@answer.question) %>
+<%= link_to t('edit'), edit_admin_answer_path(@answer) %> |
+<%= link_to t('back'), admin_question_path(@answer.question) %>

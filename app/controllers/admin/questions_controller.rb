@@ -51,6 +51,6 @@ class Admin::QuestionsController < Admin::BaseController
   end
 
   def rescue_with_question_not_found
-    render plain: I18n.t('record_not_found')
+    render plain: t('record_not_found')
   end
 end

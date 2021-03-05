@@ -1,10 +1,10 @@
-<h1><%= I18n.t('test_completed', test: @test_passage.test.title) %></h1>
+<h1><%= t('test_completed', test: @test_passage.test.title) %></h1>
 
 <h2>
-  <%= I18n.t('result') %>:
+  <%= t('result') %>:
 </h2>
 <p>
   <%= result(@test_passage) %>
 </p>
 
-<p><%= link_to I18n.t('back'), tests_path %></p>
+<p><%= link_to t('back'), tests_path %></p>

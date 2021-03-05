@@ -1,7 +1,7 @@
 <li>
   <%= answer.title %><br>
-  <%= link_to I18n.t('show'), admin_answer_path(answer) %>
-  <%= link_to I18n.t('edit'), edit_admin_answer_path(answer) %>
-  <%= link_to I18n.t('delete'), admin_answer_path(answer), method: :delete,
-              data: {confirm: I18n.t('are_you_sure?')} %>
+  <%= link_to t('show'), admin_answer_path(answer) %>
+  <%= link_to t('edit'), edit_admin_answer_path(answer) %>
+  <%= link_to t('delete'), admin_answer_path(answer), method: :delete,
+              data: {confirm: t('arae_you_sure?')} %>
 </li>
