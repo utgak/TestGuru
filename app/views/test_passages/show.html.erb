@@ -4,6 +4,8 @@
   <%= @test_passage.current_question.title %>
 </b>
 
+<%= link_to t('create_gist'), test_passage_gist_index_path(@test_passage), method: :post %>
+
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :title,
                                   include_hidden: false do |b| %>
@@ -14,13 +16,13 @@
     <% end %>
 
   <p>
-    <%= form.submit 'Next' %>
+    <%= form.submit t('next') %>
   </p>
 
   <p><%= test_progress(@test_passage) %></p>
 
   <p>
-    <%= link_to 'Back', tests_path %>
+    <%= link_to t('back'), tests_path %>
   </p>
 
 <% end %>

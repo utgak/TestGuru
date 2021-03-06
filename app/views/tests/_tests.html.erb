@@ -3,5 +3,5 @@
   <td><%= tests.category.title %></td>
   <td><%= tests.level %></td>
   <td><%= tests.questions.size %></td>
-  <td> <%= button_to 'Start', "/tests/#{tests.id}/start" %></td>
+  <td> <%= button_to I18n.t('start'), start_test_path(tests) %></td>
 </tr>

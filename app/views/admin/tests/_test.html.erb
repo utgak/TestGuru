@@ -3,11 +3,11 @@
   <td><%= test.category.title %></td>
   <td><%= test.level %></td>
   <td><%= test.questions.size %></td>
-  <td><%= link_to 'Show', admin_test_path(test) %></td>
-  <td><%= link_to 'Edit', edit_admin_test_path(test) %></td>
+  <td><%= link_to t("show"), admin_test_path(test) %></td>
+  <td><%= link_to t("edit"), edit_admin_test_path(test) %></td>
   <td>
-    <%= link_to 'Delete', admin_test_path(test),
+    <%= link_to t("delete"), admin_test_path(test),
                 method: :delete,
-                date: { confirm: 'Are you sure?'} %>
+                date: { confirm: t("are_you_sure?")} %>
   </td>
 </tr>

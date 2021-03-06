@@ -1,6 +1,5 @@
 class Admin::QuestionsController < Admin::BaseController
 
-  layout 'admin'
 
   before_action :find_test, only: %i[create new]
   before_action :find_question, only: %i[show edit update destroy]
@@ -52,6 +51,6 @@ class Admin::QuestionsController < Admin::BaseController
   end
 
   def rescue_with_question_not_found
-    render plain: 'Record was not found'
+    render plain: t('record_not_found')
   end
 end

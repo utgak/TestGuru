@@ -1,10 +1,10 @@
-<h1>The <%= @test_passage.test.title %> test was completed!</h1>
+<h1><%= t('test_completed', test: @test_passage.test.title) %></h1>
 
 <h2>
-  Result:
+  <%= t('result') %>:
 </h2>
 <p>
-  <%= result(@test_passage) %>
+  <%= result(@test_passage).html_safe %>
 </p>
 
-<p><%= link_to 'Back', tests_path %></p>
+<p><%= link_to t('back'), tests_path %></p>
