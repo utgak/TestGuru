@@ -1,6 +1,6 @@
 class SortTests {
     constructor(table) {
-        table.addEventListener('click', this.sortRowsByTitle.bind(this))
+        table.addEventListener('click', this.sortRowsByTitle)
     }
 
     sortRowsByTitle() {
@@ -21,6 +21,4 @@ class SortTests {
         }
         table.tBodies[0].append(...sortedRows)
     }
-
-
 }
