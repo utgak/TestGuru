@@ -4,8 +4,8 @@
   <tr>
     <th class="sort-by-title pointer">
       <%= t("title") %>
-      <%= octicon 'arrow-up', class: 'text-success hide' %>
-      <%= octicon 'arrow-down', class: 'text-success hide' %>
+      <%= octicon 'arrow-up', class: 'text-success' %>
+      <%= octicon 'arrow-down', class: 'text-success' %>
     </th>
     <th><%= t("category") %></th>
     <th><%= t("level") %></th>
@@ -15,3 +15,7 @@
 
   <%= render partial: 'tests', collection: @tests %>
 </table>
+
+<script type="application/javascript">
+    new SortTests
+</script>
