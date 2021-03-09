@@ -1,6 +1,6 @@
 class SortTests {
-    constructor() {
-        const control = document.querySelector('.sort-by-title')
+    constructor(table) {
+        const control = table
 
         control.addEventListener('click', this.sortRowsByTitle)
     }
@@ -30,6 +30,10 @@ class SortTests {
             this.querySelector('.octicon-arrow-down').classList.remove('hide')
         }
 
+        table.parentNode.replaceChild(SortTests.newTable(rows, sortedRows), table)
+    }
+
+    static newTable(rows, sortedRows) {
         const sortedTable = document.createElement('table')
 
         sortedTable.classList.add('table')
@@ -38,7 +42,6 @@ class SortTests {
         for (let i = 0; i < sortedRows.length; i++) {
             sortedTable.appendChild(sortedRows[i])
         }
-
-        table.parentNode.replaceChild(sortedTable, table)
+        return sortedTable
     }
 }

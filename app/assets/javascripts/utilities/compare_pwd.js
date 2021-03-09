@@ -1,7 +1,7 @@
 class ComparePwd{
-    constructor() {
-        this.pwd = document.querySelector('#user_password')
-        this.pwd_confirm = document.querySelector('#user_password_confirmation')
+    constructor(pwd, pwd_confirm) {
+        this.pwd = pwd
+        this.pwd_confirm = pwd_confirm
         this.setup()
     }
 

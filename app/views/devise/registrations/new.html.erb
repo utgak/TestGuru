@@ -33,9 +33,7 @@
     <%= octicon 'check', class: 'text-success hide' %>
   </div>
 
-  <script type="application/javascript">
-    new ComparePwd
-  </script>
+  <%= javascript_tag " new ComparePwd(document.querySelector('#user_password'), document.querySelector('#user_password_confirmation')) " %>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
