@@ -2,9 +2,7 @@ class SortTests {
     constructor() {
         var control = document.querySelector('.sort-by-title')
 
-        if (control) {
-            control.addEventListener('click', this.sortRowsByTitle)
-        }
+        control.addEventListener('click', this.sortRowsByTitle)
     }
 
 
