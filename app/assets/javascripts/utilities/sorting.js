@@ -4,7 +4,7 @@ class SortTests {
     }
 
     sortRowsByTitle() {
-        const table = this.querySelector('table')
+        const table = document.querySelector('table')
         const sortedRows = Array.from(table.rows).slice(1)
 
         if (this.querySelector('.octicon-arrow-up').classList.contains('hide')) {
