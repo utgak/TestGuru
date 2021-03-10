@@ -15,4 +15,5 @@
     <%= render partial:'/admin/questions/questions', collection:  @test.questions %>
 </table>
 
-<%= link_to t("back"), admin_tests_path %>
+<%= link_to t("back"), admin_tests_path %> |
+<%= link_to t('edit'), edit_admin_test_path(@test) %>
