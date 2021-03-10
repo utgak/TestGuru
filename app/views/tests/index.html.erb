@@ -1,15 +1,19 @@
 <h1><%= t("tests") %></h1>
 
-<table>
+<table class="table">
   <tr>
-    <th><%= t("title") %></th>
+    <th class="sort-by-title pointer">
+      <%= t("title") %>
+      <%= octicon 'arrow-up', class: 'text-success' %>
+      <%= octicon 'arrow-down', class: 'text-success' %>
+    </th>
     <th><%= t("category") %></th>
     <th><%= t("level") %></th>
     <th><%= t("number_of_questions") %></th>
     <th><%= t("action") %></th>
   </tr>
 
-    <tr>
-      <%= render partial: 'tests', collection: @tests %>
-    </tr>
+  <%= render partial: 'tests', collection: @tests %>
 </table>
+
+<%= javascript_tag "new SortTests(document.querySelector('.sort-by-title'))" %>

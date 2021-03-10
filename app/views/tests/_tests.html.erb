@@ -1,7 +1,7 @@
-<tr></tr>
+<tr>
   <td><%= tests.title %></td>
   <td><%= tests.category.title %></td>
   <td><%= tests.level %></td>
   <td><%= tests.questions.size %></td>
-  <td> <%= button_to I18n.t('start'), start_test_path(tests) %></td>
+  <td> <%= button_to t('start'), start_test_path(tests) %>
 </tr>

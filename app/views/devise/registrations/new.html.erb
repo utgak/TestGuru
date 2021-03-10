@@ -29,7 +29,11 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= octicon 'x', class: 'text-success hide' %>
+    <%= octicon 'check', class: 'text-success hide' %>
   </div>
+
+  <%= javascript_tag " new ComparePwd(document.querySelector('#user_password'), document.querySelector('#user_password_confirmation')) " %>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
