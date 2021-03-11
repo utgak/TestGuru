@@ -11,7 +11,7 @@ class Timer {
             clearInterval(this.id)
             window.location.href = `http://localhost:3000/test_passages/${this.test_passage_id}/result`
         } else {
-            this.elem.innerHTML ="Time left: " + Math.floor(this.seconds / 60) + ":" + Math.floor(this.seconds % 60)
+            this.elem.innerHTML = Math.floor(this.seconds / 60) + ":" + Math.floor(this.seconds % 60)
             this.seconds--
         }
     }
