@@ -8,7 +8,6 @@ module TestPassagesHelper
   end
 
   def test_progress(test_passage)
-    content_tag :p, "#{ t('question') } #{test_passage.current_question.id - test_passage.test.questions.first.id + 1}
-     / #{test_passage.test.questions.size}".html_safe
+    "#{(test_passage.current_question.id.to_i - test_passage.test.questions.first.id.to_i) / test_passage.test.questions.size.to_f * 100}".to_f.round
   end
 end
