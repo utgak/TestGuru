@@ -19,11 +19,14 @@
     <%= form.submit t('next')%>
   </p>
 
+  <div id="time" data-test="<%= @test_passage.id %>"></div>
+
   <div id="myProgress">
     <div id="myBar">00%</div>
   </div>
 
   <%= javascript_tag "new ProgressBar(document.getElementById('myBar')).move(#{test_progress(@test_passage)})" %>
+  <%= javascript_tag "timer = new Timer(document.getElementById('time'), #{time(@test_passage)})" %>
 
 
   <p>

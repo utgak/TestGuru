@@ -7,11 +7,15 @@ class TestPassagesController < ApplicationController
   def result; end
 
   def update
-    @test_passage.accept!(params[:answer_ids])
-    if @test_passage.completed?
+    if @test_passage.created_at + @test_passage.test.time_limit_in_minutes * 60 - @test_passage.updated_at < 0
       redirect_to result_test_passage_path(@test_passage)
     else
-      render :show
+      @test_passage.accept!(params[:answer_ids])
+      if @test_passage.completed?
+        redirect_to result_test_passage_path(@test_passage)
+      else
+        render :show
+      end
     end
   end
 

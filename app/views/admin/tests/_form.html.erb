@@ -12,6 +12,11 @@
   </p>
 
   <p>
+    <%= form.label :time_limit_in_minutes %><br>
+    <%= form.text_field :time_limit_in_minutes, id: :test_time_limit_in_minutes %>
+  </p>
+
+  <p>
     <%= form.label :category_id %><br>
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </p>
