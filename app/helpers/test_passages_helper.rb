@@ -8,8 +8,8 @@ module TestPassagesHelper
   end
 
   def time(test_passage)
-    if test_passage.created_at + test_passage.test.time_limit_in_minutes * 60 - test_passage.updated_at > 0
-      test_passage.created_at + test_passage.test.time_limit_in_minutes * 60 - test_passage.updated_at
+    if test_passage.created_at + test_passage.test.time_limit_in_minutes * 60 - Time.current > 0
+      test_passage.created_at + test_passage.test.time_limit_in_minutes * 60 - Time.current
     end
   end
 
