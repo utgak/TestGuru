@@ -3,6 +3,9 @@ class Timer {
         this.test_passage_id = elem.dataset.test_passage_id
         this.elem = elem
         this.seconds = seconds
+    }
+
+    startTimer() {
         this.id = setInterval(() => this.changeTime(), 1000)
     }
 

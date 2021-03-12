@@ -29,7 +29,7 @@
   </div>
 
   <%= javascript_tag "new ProgressBar(document.getElementById('myBar')).move(#{test_progress(@test_passage)})" %>
-  <%= javascript_tag "timer = new Timer(document.getElementById('time'), #{time(@test_passage)})" %>
+  <%= javascript_tag "timer = new Timer(document.getElementById('time'), #{time(@test_passage)}).startTimer()" %>
 
 
   <p>
