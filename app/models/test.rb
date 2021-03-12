@@ -5,6 +5,7 @@ class Test < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages
 
+  validates :time_limit_in_minutes, presence: true
   validates :title, uniqueness: { scope: :level }
   validates :title, presence: true
   validates :level, presence: true,

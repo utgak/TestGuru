@@ -6,8 +6,8 @@ categories = Category.create!([{ title: 'title1' },
                                { title: 'title3' },
                                { title: 'title4' }])
 
-tests = Test.create!([{ title: 'title1', level: 1, author: users[0], category: categories[0] },
-                      { title: 'title1', level: 2, author: users[0], category: categories[1] }])
+tests = Test.create!([{ title: 'title1', level: 1, author: users[0], category: categories[0], time_limit_in_minutes: 1 },
+                      { title: 'title1', level: 2, author: users[0], category: categories[1], time_limit_in_minutes: 10 }])
 
 questions = Question.create!([{ title: 'title1', test: tests[0] },
                               { title: 'title2', test: tests[0] },
