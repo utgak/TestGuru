@@ -1,0 +1,19 @@
+<h1><%= t('all badges') %></h1>
+
+<table>
+  <th> <%= t('title') %> </th>
+  <th> <%= t('image') %> </th>
+  <th> <%= t('condition') %> </th>
+  <th> <%= t('option') %> </th>
+  <%= render @all_badges %>
+</table>
+
+<h1><%= t('your badges') %></h1>
+
+<table>
+  <th> <%= t('title') %> </th>
+  <th> <%= t('image') %> </th>
+  <th> <%= t('condition') %> </th>
+  <th> <%= t('option') %> </th>
+  <%= render @user_badges %>
+</table>
