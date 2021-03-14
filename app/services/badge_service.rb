@@ -28,7 +28,7 @@ class BadgeService
   def all_with_category(category)
     user_tests = @user.test_passages.joins(:test).where(tests: {category: Category.where(title: category)}).map{|tp| tp.test if tp.success?}
     category_tests = Test.tests_by_category(category)
-    count_badges = @user.badges.where(condition: 'All with category').count
+    count_badges = @user.badges.where(condition: 'All with category', option: category).count
     count_badges.times do
       user_tests - category_tests
     end
@@ -39,7 +39,7 @@ class BadgeService
     level = level.to_i
     user_tests = @user.test_passages.joins(:test).where(tests: {level: level}).map{ |tp| tp.test if tp.success? }
     level_tests = Test.where(level: level)
-    count_badges = @user.badges.where(condition: 'All with level').count
+    count_badges = @user.badges.where(condition: 'All with level', option: level).count
     count_badges.times do
       user_tests - level_tests
     end
