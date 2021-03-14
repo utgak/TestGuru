@@ -6,15 +6,12 @@ class BadgeService
   def new_badges
     badge_ids = []
     Badge.all.each do |badge|
-      if badge.condition == 'On the first try'
+      case badge.condition
+      when 'On the first try'
         badge_ids << badge.id if on_the_first_try(badge.option)
-      end
-
-      if badge.condition == 'All with category'
+      when 'All with category'
         badge_ids << badge.id if all_with_category(badge.option)
-      end
-
-      if badge.condition == 'All with level'
+      when 'All with level'
         badge_ids << badge.id if all_with_level(badge.option)
       end
     end
