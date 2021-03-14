@@ -46,6 +46,6 @@ class BadgeService
     count_badges.times do
       user_tests - level_tests
     end
-    user_tests.uniq.sort == level_tests
+    user_tests.uniq.sort == level_tests.sort
   end
 end
