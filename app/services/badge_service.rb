@@ -28,8 +28,8 @@ class BadgeService
   def all_with_category(category)
     user_tests = @user.test_passages.joins(:test).where(tests: {category: Category.where(title: category)}).map{|tp| tp.test if tp.success?}
     category_tests = Test.tests_by_category(category)
-    count = @user.badges.where(condition: 'All with category').count
-    count.times do
+    count_badges = @user.badges.where(condition: 'All with category').count
+    count_badges.times do
       user_tests - category_tests
     end
     user_tests.uniq.sort == category_tests.sort
