@@ -11,7 +11,8 @@ class TestPassagesController < ApplicationController
   def update
     @test_passage.accept!(params[:answer_ids]) unless @test_passage.time_is_up?
     if @test_passage.completed?
-      Badge.new_badges(current_user).each do |badge|
+      BadgeService.new(current_user).new_badges.each do |badge_id|
+        badge = Badge.find(badge_id)
         current_user.badges.push(badge)
         flash["#{badge}"] = t('new_badge', badge: badge.title)
       end
