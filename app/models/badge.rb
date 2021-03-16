@@ -6,6 +6,4 @@ class Badge < ApplicationRecord
   validates :condition, presence: true
   validates :option, presence: true
   validates :img, presence: true
-
-  CONDITIONS = ['On the first try', 'All with category', 'All with level']
 end

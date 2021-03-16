@@ -1,48 +1,26 @@
 class BadgeService
-  def initialize(user)
-    @user = user
+
+  CONDITIONS = {
+    'On the first try' => Conditions::FirstTimeCondition,
+    'All with category' => Conditions::AllTestsWithCategory,
+    'All with level' => Conditions::AllTestsWithLevel
+  }
+
+  def initialize(test_passage)
+    @test_passage = test_passage
   end
 
+
   def new_badges
-    badge_ids = []
-    Badge.all.each do |badge|
-      case badge.condition
-      when 'On the first try'
-        badge_ids << badge.id if on_the_first_try(badge.option)
-      when 'All with category'
-        badge_ids << badge.id if all_with_category(badge.option)
-      when 'All with level'
-        badge_ids << badge.id if all_with_level(badge.option)
-      end
+    Badge.where(option: @test_passage.test.title).or(Badge.where(option: @test_passage.test.level)).find_each do |badge|
+      condition = CONDITIONS[badge.condition].new(badge.option, @test_passage)
+      add_badge(badge) if condition.satisfies?
     end
-    badge_ids
   end
 
   private
 
-  def on_the_first_try(test_title)
-    test_passages = @user.test_passages.joins(:test).where(user: @user, tests: {title: test_title})
-    test_passages.count == 1 && test_passages.first.success?
-  end
-
-  def all_with_category(category)
-    user_tests = @user.test_passages.joins(:test).where(tests: {category: Category.where(title: category)}).map{|tp| tp.test if tp.success?}
-    category_tests = Test.tests_by_category(category)
-    count_badges = @user.badges.where(condition: 'All with category', option: category).count
-    count_badges.times do
-      user_tests - category_tests
-    end
-    user_tests.uniq.sort == category_tests.sort
-  end
-
-  def all_with_level(level)
-    level = level.to_i
-    user_tests = @user.test_passages.joins(:test).where(tests: {level: level}).map{ |tp| tp.test if tp.success? }
-    level_tests = Test.where(level: level)
-    count_badges = @user.badges.where(condition: 'All with level', option: level).count
-    count_badges.times do
-      user_tests - level_tests
-    end
-    user_tests.uniq.sort == level_tests.sort
+  def add_badge(badge)
+    @test_passage.user.badges << badge
   end
 end

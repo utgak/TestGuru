@@ -11,11 +11,7 @@ class TestPassagesController < ApplicationController
   def update
     @test_passage.accept!(params[:answer_ids]) unless @test_passage.time_is_up?
     if @test_passage.completed?
-      BadgeService.new(current_user).new_badges.each do |badge_id|
-        badge = Badge.find(badge_id)
-        current_user.badges.push(badge)
-        flash["#{badge}"] = t('new_badge', badge: badge.title)
-      end
+      BadgeService.new(@test_passage).new_badges
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
