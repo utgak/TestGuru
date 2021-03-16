@@ -11,6 +11,7 @@ class TestPassagesController < ApplicationController
   def update
     @test_passage.accept!(params[:answer_ids]) unless @test_passage.time_is_up?
     if @test_passage.completed?
+      BadgeService.new(@test_passage).new_badges
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show

@@ -1,0 +1,27 @@
+<%= form_with(model: [:admin, badge], local: true) do |form| %>
+  <%= render 'shared/errors', resource: badge %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :img_source %>
+    <%= form.text_field :img %>
+  </div>
+
+  <p>
+    <%= form.label :condition %>
+    <%= form.select :condition, BadgeService::CONDITIONS.keys%>
+  </p>
+
+  <div class="field">
+    <%= t("options").html_safe %>
+    <%= form.text_field :option %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

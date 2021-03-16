@@ -6,8 +6,13 @@ categories = Category.create!([{ title: 'title1' },
                                { title: 'title3' },
                                { title: 'title4' }])
 
+Badge.create!([{title: 'first try', img: 'https://findicons.com/files/icons/2779/simple_icons/32/microformats_32_black.png', condition: 'On the first try', option: 'title1'},
+               {title: 'category', img: 'https://findicons.com/files/icons/2779/simple_icons/32/microformats_32_black.png', condition: 'All with category', option: 'title1'},
+               {title: 'level', img: 'https://findicons.com/files/icons/2779/simple_icons/32/microformats_32_black.png', condition: 'All with level', option: '1'},
+               {title: 'category2', img: 'https://findicons.com/files/icons/2779/simple_icons/32/microformats_32_black.png', condition: 'All with category', option: 'title2'}])
+
 tests = Test.create!([{ title: 'title1', level: 1, author: users[0], category: categories[0], time_limit_in_minutes: 1 },
-                      { title: 'title1', level: 2, author: users[0], category: categories[1], time_limit_in_minutes: 10 }])
+                      { title: 'title2', level: 2, author: users[0], category: categories[0], time_limit_in_minutes: 10 }])
 
 questions = Question.create!([{ title: 'title1', test: tests[0] },
                               { title: 'title2', test: tests[0] },

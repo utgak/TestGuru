@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :badges, only: :index
+
   resources :test_passages, only: %i[show update] do
     resources :gist, param: :test_passage_id, only: :create
     member do
@@ -26,5 +28,6 @@ Rails.application.routes.draw do
       end
     end
     resources :gist, only: :index
+    resources :badges
   end
 end

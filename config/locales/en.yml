@@ -75,3 +75,13 @@ en:
   Tricky Tests: "Tricky Tests"
   submit: "submit"
   Time_left: "Time left:"
+  new_badge: "You got a new %{badge} badge"
+  options: '<div>Available options </br> On the first try: test title </br> All with category: test category </br> All with level: test level </div>'
+  badges: "Badges"
+  Editing Badge: "Editing Badge"
+  image: "Image"
+  condition: "Condition"
+  option: "Option"
+  new badge : "New badge"
+  all badges: "All badges"
+  your badges: "Your badges"
